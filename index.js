@@ -4,6 +4,7 @@ const app = express();
 
 app.use("/test", (req, res)=>{
     console.log("received request");
+    res.status(200).send("Success"); //la respuesta al navegador
 });
 
 app.listen(3000, ()=> {
