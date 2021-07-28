@@ -6,10 +6,15 @@ const app = express(); //creación de la app express
     console.log("received request");
     res.status(200).send("Success"); //la respuesta al navegador
 });*/
-const bodyParser = require("body-parser");
+//const bodyParser = require("body-parser");
 const usersRoutes = require("./routes/users.route");
 
-app.use(bodyParser.json());
+//para no usar bodyparser
+app.use(express.urlencoded({extended: true}));
+app.use(expres.json());
+
+
+//app.use(bodyParser.json());
 app.use("/users", usersRoutes);
 
 app.listen(3000, () => {   //inicialización del puerto de escucha 
