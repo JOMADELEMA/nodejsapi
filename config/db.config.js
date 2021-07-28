@@ -1,6 +1,6 @@
-const { createPool } = require("mysql");
+const { createPool } = require("mysql"); //inicialización de uso de mysql siempre agregar npm install --save mysql
 /** Connection pool creation - START */
-const db = createPool({
+const db = createPool({  //agregar credenciales de base de datos
   port: 3306,
   host: "localhost",
   user: "jomadelema",
