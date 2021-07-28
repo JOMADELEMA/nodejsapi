@@ -11,7 +11,7 @@ const usersRoutes = require("./routes/users.route");
 
 //para no usar bodyparser
 app.use(express.urlencoded({extended: true}));
-app.use(expres.json());
+app.use(express.json());
 
 
 //app.use(bodyParser.json());
