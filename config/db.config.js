@@ -11,3 +11,5 @@ const db = createPool({  //agregar credenciales de base de datos
 /** Connection pool creation - END */
 
 module.exports = db;
+
+//si se borran los npm modules se puede utilizar nuevamente npm install e instalará automaticamente las dependencias de package.json
