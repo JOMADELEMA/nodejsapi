@@ -22,7 +22,7 @@ router.post("/register", usersController.register);
  *              required:
  *                 - firstName
  *                 - lastName
- *                 - emailId
+ *                 - email
  *                 - password
  *              properties:
  *                  firstName:
@@ -35,7 +35,7 @@ router.post("/register", usersController.register);
  *                      minLength: 1
  *                      maxLength: 45
  *                      example: Balla
- *                  emailId:
+ *                  email:
  *                      type: string
  *                      minLength: 1
  *                      maxLength: 100
