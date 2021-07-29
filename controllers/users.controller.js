@@ -4,7 +4,7 @@ exports.register = (req, res, next) => {
     const data = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        emailId: req.body.emailId,
+        email: req.body.email,
         password: req.body.password,
     };
 
