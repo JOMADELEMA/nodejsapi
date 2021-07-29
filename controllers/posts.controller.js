@@ -34,3 +34,23 @@ exports.getAllPosts = (req, res, next)=> {
     });
 };
 
+exports.addPostComment = (req, res, next)=> {
+    
+    const data = { 
+        postId: req.body.postId,
+        comment: req.body.comment,
+        addedByUserId: req.body.addedByUserId
+    };
+
+    postsService.addPostComment(data, (error, results)=>{
+        if (error){
+            console.log(error);
+            return res.status(400).send({success: 0, data: "bad request"});
+        }
+        return res.status(200).send({
+            success: 1,
+            data: results,
+        });
+    });
+};
+
