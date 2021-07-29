@@ -10,6 +10,7 @@ const app = express(); //creación de la app express
 });*/
 //const bodyParser = require("body-parser");
 const usersRoutes = require("./routes/users.route");
+const postsRoutes = require("./routes/posts.route");
 
 //para no usar bodyparser
 app.use(express.urlencoded({extended: true}));
@@ -38,6 +39,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 //app.use(bodyParser.json());
 app.use("/users", usersRoutes);
+app.use("/posts", postsRoutes);
 
 app.listen(3000, () => {   //inicialización del puerto de escucha 
     console.log("I am ready to listen you");
