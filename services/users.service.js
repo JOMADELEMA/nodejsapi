@@ -12,3 +12,20 @@ exports.register = (data, callback) => {
         }
     );
 };
+
+exports.login = (data, callback) => {
+    db.query(
+        'SELECT id FROM users WHERE emailId = ? AND password = ?',
+        [data.email, data.password],
+        (error, results, fields)=>{
+            if(error){
+                return callback(error);
+            }
+            if (results.length > 0){
+                return callback(null, "Login Success");
+            } else {
+                return callback("Invalid credentials");
+            }
+        }
+    );
+};

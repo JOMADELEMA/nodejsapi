@@ -56,6 +56,41 @@ router.post("/register", usersController.register);
 
 
 
-//router.post("/login", usersController.login); está oculto por que no se ha programado
+router.post("/login", usersController.login); 
+/**
+ * @swagger
+ * /users/login:
+ *   post:
+ *      description: Used to login user
+ *      tags:
+ *          - users
+ *      parameters:
+ *          - in: body
+ *            name: User
+ *            description: User data
+ *            schema:
+ *              type: object
+ *              required:
+ *                 - email
+ *                 - password
+ *              properties:
+ *                  email:
+ *                      type: string
+ *                      minLength: 1
+ *                      maxLength: 100
+ *                      example: navin@sample.com
+ *                  password:
+ *                      type: string
+ *                      minLength: 1
+ *                      maxLength: 45
+ *                      example: abcd
+ *      responses:
+ *          '200':
+ *              description: Resource added successfully
+ *          '500':
+ *              description: Internal server error
+ *          '400':
+ *              description: Bad request
+ */
 
 module.exports = router;
